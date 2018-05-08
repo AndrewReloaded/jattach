@@ -1,6 +1,7 @@
 ifneq ($(findstring Windows,$(OS)),)
   CL=cl.exe
-  CFLAGS=/O2 /D_CRT_SECURE_NO_WARNINGS
+  CFLAGS=/O2 /D_CRT_SECURE_NO_WARNINGS /D_WIN32_WINNT=0x0501
+  LFLAGS= /SUBSYSTEM:CONSOLE,5.01
   JATTACH_EXE=jattach.exe
 else 
   UNAME_S:=$(shell uname -s)
@@ -28,7 +29,7 @@ build/jattach: src/jattach_linux.c
 	$(CC) $(CFLAGS) -o $@ $^
 
 build/jattach.exe: src/jattach_windows.c
-	$(CL) $(CFLAGS) /Fobuild/jattach.obj /Fe$@ $^ advapi32.lib
+	$(CL) $(CFLAGS) /Fobuild/jattach.obj /Fe$@ $^ advapi32.lib /link $(LFLAGS)
 
 clean:
 	rm -rf build

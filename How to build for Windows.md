@@ -7,4 +7,8 @@
 4. Run "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/vcvarsall.bat" x86 if you want to buil Windows 32 binaries or
        "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/vcvarsall.bat" x64 if you want to buil Windows 64 binaries in command promt
    Note: this paths are valid for Visual Studio 2015
+   
+   Run "c:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/vcvarsall.bat" x86 if you want to buil Windows 32 binaries or
+       "c:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/vcvarsall.bat" x64 if you want to buil Windows 64 binaries in command promt
+   Note: this paths are valid for Visual Studio 2012
 5. Run make   
